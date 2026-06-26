@@ -1,0 +1,206 @@
+package org.mozilla.javascript;
+
+import java.util.Iterator;
+
+/* JADX INFO: loaded from: classes3.dex */
+public final class NativeIterator extends IdScriptableObject {
+    public static final String ITERATOR_PROPERTY_NAME = "__iterator__";
+    private static final Object ITERATOR_TAG = "Iterator";
+    private static final int Id___iterator__ = 3;
+    private static final int Id_constructor = 1;
+    private static final int Id_next = 2;
+    private static final int MAX_PROTOTYPE_ID = 3;
+    private static final String STOP_ITERATION = "StopIteration";
+    private static final long serialVersionUID = -4136968203581667681L;
+    private Object objectIterator;
+
+    public static class WrappedJavaIterator {
+        private Iterator<?> iterator;
+        private Scriptable scope;
+
+        public WrappedJavaIterator(Iterator<?> it, Scriptable scriptable) {
+            this.iterator = it;
+            this.scope = scriptable;
+        }
+
+        public Object __iterator__(boolean z) {
+            return this;
+        }
+
+        public Object next() {
+            if (this.iterator.hasNext()) {
+                return this.iterator.next();
+            }
+            throw new JavaScriptException(NativeIterator.getStopIterationObject(this.scope), null, 0);
+        }
+    }
+
+    private NativeIterator() {
+    }
+
+    private static Iterator<?> getJavaIterator(Object obj) {
+        if (!(obj instanceof Wrapper)) {
+            return null;
+        }
+        Object objUnwrap = ((Wrapper) obj).unwrap();
+        return objUnwrap instanceof Iterable ? ((Iterable) objUnwrap).iterator() : objUnwrap instanceof Iterator ? (Iterator) objUnwrap : null;
+    }
+
+    public static Object getStopIterationObject(Scriptable scriptable) {
+        return ScriptableObject.getTopScopeValue(ScriptableObject.getTopLevelScope(scriptable), ITERATOR_TAG);
+    }
+
+    public static void init(Context context, ScriptableObject scriptableObject, boolean z) {
+        new NativeIterator().exportAsJSClass(3, scriptableObject, z);
+        if (context.getLanguageVersion() >= 200) {
+            ES6Generator.init(scriptableObject, z);
+        } else {
+            NativeGenerator.init(scriptableObject, z);
+        }
+        StopIteration stopIteration = new StopIteration();
+        stopIteration.setPrototype(ScriptableObject.getObjectPrototype(scriptableObject));
+        stopIteration.setParentScope(scriptableObject);
+        if (z) {
+            stopIteration.sealObject();
+        }
+        ScriptableObject.defineProperty(scriptableObject, STOP_ITERATION, stopIteration, 2);
+        scriptableObject.associateValue(ITERATOR_TAG, stopIteration);
+    }
+
+    private static Object jsConstructor(Context context, Scriptable scriptable, Scriptable scriptable2, Object[] objArr) {
+        boolean z = false;
+        if (objArr.length == 0 || objArr[0] == null || objArr[0] == Undefined.instance) {
+            throw ScriptRuntime.typeError1("msg.no.properties", ScriptRuntime.toString(objArr.length == 0 ? Undefined.instance : objArr[0]));
+        }
+        Scriptable object = ScriptRuntime.toObject(context, scriptable, objArr[0]);
+        if (objArr.length > 1 && ScriptRuntime.toBoolean(objArr[1])) {
+            z = true;
+        }
+        if (scriptable2 != null) {
+            Iterator<?> javaIterator = getJavaIterator(object);
+            if (javaIterator != null) {
+                Scriptable topLevelScope = ScriptableObject.getTopLevelScope(scriptable);
+                return context.getWrapFactory().wrap(context, topLevelScope, new WrappedJavaIterator(javaIterator, topLevelScope), WrappedJavaIterator.class);
+            }
+            Scriptable iterator = ScriptRuntime.toIterator(context, scriptable, object, z);
+            if (iterator != null) {
+                return iterator;
+            }
+        }
+        Object objEnumInit = ScriptRuntime.enumInit(object, context, scriptable, z ? 3 : 5);
+        ScriptRuntime.setEnumNumbers(objEnumInit, true);
+        NativeIterator nativeIterator = new NativeIterator(objEnumInit);
+        nativeIterator.setPrototype(ScriptableObject.getClassPrototype(scriptable, nativeIterator.getClassName()));
+        nativeIterator.setParentScope(scriptable);
+        return nativeIterator;
+    }
+
+    private Object next(Context context, Scriptable scriptable) {
+        if (ScriptRuntime.enumNext(this.objectIterator).booleanValue()) {
+            return ScriptRuntime.enumId(this.objectIterator, context);
+        }
+        throw new JavaScriptException(getStopIterationObject(scriptable), null, 0);
+    }
+
+    @Override // org.mozilla.javascript.IdScriptableObject, org.mozilla.javascript.IdFunctionCall
+    public Object execIdCall(IdFunctionObject idFunctionObject, Context context, Scriptable scriptable, Scriptable scriptable2, Object[] objArr) {
+        if (!idFunctionObject.hasTag(ITERATOR_TAG)) {
+            return super.execIdCall(idFunctionObject, context, scriptable, scriptable2, objArr);
+        }
+        int iMethodId = idFunctionObject.methodId();
+        if (iMethodId == 1) {
+            return jsConstructor(context, scriptable, scriptable2, objArr);
+        }
+        if (!(scriptable2 instanceof NativeIterator)) {
+            throw IdScriptableObject.incompatibleCallError(idFunctionObject);
+        }
+        NativeIterator nativeIterator = (NativeIterator) scriptable2;
+        if (iMethodId == 2) {
+            return nativeIterator.next(context, scriptable);
+        }
+        if (iMethodId == 3) {
+            return scriptable2;
+        }
+        throw new IllegalArgumentException(String.valueOf(iMethodId));
+    }
+
+    @Override // org.mozilla.javascript.IdScriptableObject
+    public int findPrototypeId(String str) {
+        String str2;
+        int i2;
+        int length = str.length();
+        if (length == 4) {
+            i2 = 2;
+            str2 = ES6Iterator.NEXT_METHOD;
+        } else if (length == 11) {
+            i2 = 1;
+            str2 = "constructor";
+        } else if (length == 12) {
+            i2 = 3;
+            str2 = ITERATOR_PROPERTY_NAME;
+        } else {
+            str2 = null;
+            i2 = 0;
+        }
+        if (str2 == null || str2 == str || str2.equals(str)) {
+            return i2;
+        }
+        return 0;
+    }
+
+    @Override // org.mozilla.javascript.ScriptableObject, org.mozilla.javascript.Scriptable
+    public String getClassName() {
+        return "Iterator";
+    }
+
+    @Override // org.mozilla.javascript.IdScriptableObject
+    public void initPrototypeId(int i2) {
+        String str;
+        int i3 = 1;
+        if (i2 == 1) {
+            str = "constructor";
+            i3 = 2;
+        } else if (i2 == 2) {
+            str = ES6Iterator.NEXT_METHOD;
+            i3 = 0;
+        } else {
+            if (i2 != 3) {
+                throw new IllegalArgumentException(String.valueOf(i2));
+            }
+            str = ITERATOR_PROPERTY_NAME;
+        }
+        initPrototypeMethod(ITERATOR_TAG, i2, str, i3);
+    }
+
+    public static class StopIteration extends NativeObject {
+        private static final long serialVersionUID = 2485151085722377663L;
+        private Object value;
+
+        public StopIteration() {
+            this.value = Undefined.instance;
+        }
+
+        @Override // org.mozilla.javascript.NativeObject, org.mozilla.javascript.ScriptableObject, org.mozilla.javascript.Scriptable
+        public String getClassName() {
+            return NativeIterator.STOP_ITERATION;
+        }
+
+        public Object getValue() {
+            return this.value;
+        }
+
+        @Override // org.mozilla.javascript.ScriptableObject, org.mozilla.javascript.Scriptable
+        public boolean hasInstance(Scriptable scriptable) {
+            return scriptable instanceof StopIteration;
+        }
+
+        public StopIteration(Object obj) {
+            this.value = Undefined.instance;
+            this.value = obj;
+        }
+    }
+
+    private NativeIterator(Object obj) {
+        this.objectIterator = obj;
+    }
+}

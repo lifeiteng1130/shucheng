@@ -1,0 +1,10 @@
+package com.jayway.jsonpath;
+
+/* JADX INFO: loaded from: classes.dex */
+public enum Option {
+    DEFAULT_PATH_LEAF_TO_NULL,
+    ALWAYS_RETURN_LIST,
+    AS_PATH_LIST,
+    SUPPRESS_EXCEPTIONS,
+    REQUIRE_PROPERTIES
+}

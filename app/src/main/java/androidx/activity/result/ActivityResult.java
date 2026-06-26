@@ -1,0 +1,82 @@
+package androidx.activity.result;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Parcel;
+import android.os.Parcelable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import c.a.a.a.a;
+import org.slf4j.helpers.MessageFormatter;
+
+/* JADX INFO: loaded from: classes.dex */
+@SuppressLint({"BanParcelableUsage"})
+public final class ActivityResult implements Parcelable {
+
+    @NonNull
+    public static final Parcelable.Creator<ActivityResult> CREATOR = new Parcelable.Creator<ActivityResult>() { // from class: androidx.activity.result.ActivityResult.1
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // android.os.Parcelable.Creator
+        public ActivityResult createFromParcel(@NonNull Parcel parcel) {
+            return new ActivityResult(parcel);
+        }
+
+        /* JADX WARN: Can't rename method to resolve collision */
+        @Override // android.os.Parcelable.Creator
+        public ActivityResult[] newArray(int i2) {
+            return new ActivityResult[i2];
+        }
+    };
+
+    @Nullable
+    private final Intent mData;
+    private final int mResultCode;
+
+    public ActivityResult(int i2, @Nullable Intent intent) {
+        this.mResultCode = i2;
+        this.mData = intent;
+    }
+
+    @NonNull
+    public static String resultCodeToString(int i2) {
+        return i2 != -1 ? i2 != 0 ? String.valueOf(i2) : "RESULT_CANCELED" : "RESULT_OK";
+    }
+
+    @Override // android.os.Parcelable
+    public int describeContents() {
+        return 0;
+    }
+
+    @Nullable
+    public Intent getData() {
+        return this.mData;
+    }
+
+    public int getResultCode() {
+        return this.mResultCode;
+    }
+
+    public String toString() {
+        StringBuilder sbR = a.r("ActivityResult{resultCode=");
+        sbR.append(resultCodeToString(this.mResultCode));
+        sbR.append(", data=");
+        sbR.append(this.mData);
+        sbR.append(MessageFormatter.DELIM_STOP);
+        return sbR.toString();
+    }
+
+    @Override // android.os.Parcelable
+    public void writeToParcel(@NonNull Parcel parcel, int i2) {
+        parcel.writeInt(this.mResultCode);
+        parcel.writeInt(this.mData == null ? 0 : 1);
+        Intent intent = this.mData;
+        if (intent != null) {
+            intent.writeToParcel(parcel, i2);
+        }
+    }
+
+    public ActivityResult(Parcel parcel) {
+        this.mResultCode = parcel.readInt();
+        this.mData = parcel.readInt() == 0 ? null : (Intent) Intent.CREATOR.createFromParcel(parcel);
+    }
+}
