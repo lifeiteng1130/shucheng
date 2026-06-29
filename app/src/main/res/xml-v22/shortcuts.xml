@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:icon="@drawable/icon_read_book"
+        android:enabled="true"
+        android:shortcutId="bookRead"
+        android:shortcutShortLabel="@string/last_read"
+        android:shortcutLongLabel="@string/last_read"
+        android:shortcutDisabledMessage="@string/last_read">
+        <intent
+            android:targetPackage="io.wenyuange.app.release"
+            android:action="android.intent.action.VIEW"
+            android:targetClass="io.legado.app.ui.main.MainActivity"/>
+        <intent
+            android:targetPackage="io.wenyuange.app.release"
+            android:action="android.intent.action.VIEW"
+            android:targetClass="io.legado.app.ui.book.read.ReadBookActivity"/>
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+    <shortcut
+        android:icon="@drawable/icon_read_book"
+        android:enabled="true"
+        android:shortcutId="readAloud"
+        android:shortcutShortLabel="@string/read_aloud"
+        android:shortcutLongLabel="@string/read_aloud"
+        android:shortcutDisabledMessage="@string/read_aloud">
+        <intent
+            android:targetPackage="io.wenyuange.app.release"
+            android:action="android.intent.action.VIEW"
+            android:targetClass="io.legado.app.receiver.SharedReceiverActivity">
+            <extra
+                android:name="action"
+                android:value="readAloud"/>
+        </intent>
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+    <shortcut
+        android:icon="@drawable/icon_read_book"
+        android:enabled="true"
+        android:shortcutId="bookshelf"
+        android:shortcutShortLabel="@string/bookshelf"
+        android:shortcutLongLabel="@string/bookshelf"
+        android:shortcutDisabledMessage="@string/bookshelf">
+        <intent
+            android:targetPackage="io.wenyuange.app.release"
+            android:action="android.intent.action.VIEW"
+            android:targetClass="io.legado.app.ui.main.MainActivity"/>
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+</shortcuts>

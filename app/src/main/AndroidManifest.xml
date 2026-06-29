@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="102010"
+    android:versionName="1.20.10"
+    android:compileSdkVersion="30"
+    android:compileSdkVersionCodename="11"
+    package="io.wenyuange.app.release"
+    platformBuildVersionCode="30"
+    platformBuildVersionName="11">
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="30"/>
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+        <intent>
+            <action android:name="android.media.browse.MediaBrowserService"/>
+        </intent>
+        <intent>
+            <action android:name="androidx.media2.session.MediaSessionService"/>
+        </intent>
+        <intent>
+            <action android:name="androidx.media2.session.MediaLibraryService"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data android:scheme="https"/>
+        </intent>
+    </queries>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <permission
+        android:name="io.wenyuange.app.release.openadsdk.permission.TT_PANGOLIN"
+        android:protectionLevel="signature"/>
+    <uses-permission android:name="io.wenyuange.app.release.openadsdk.permission.TT_PANGOLIN"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+    <uses-permission android:name="com.asus.msa.SupplementaryDID.ACCESS"/>
+    <application
+        android:theme="@style/AppTheme.Light"
+        android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        android:name="io.legado.app.App"
+        android:allowBackup="true"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:requestLegacyExternalStorage="true">
+        <activity android:name="io.legado.app.ui.welcome.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:launchMode="singleTask"
+                android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity
+            android:icon="@mipmap/launcher1"
+            android:name="io.legado.app.ui.welcome.Launcher1"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:launchMode="singleTask"
+                android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity
+            android:icon="@mipmap/launcher2"
+            android:name="io.legado.app.ui.welcome.Launcher2"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:launchMode="singleTask"
+                android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity
+            android:icon="@mipmap/launcher3"
+            android:name="io.legado.app.ui.welcome.Launcher3"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:launchMode="singleTask"
+                android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity
+            android:icon="@mipmap/launcher4"
+            android:name="io.legado.app.ui.welcome.Launcher4"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:launchMode="singleTask"
+                android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity
+            android:icon="@mipmap/launcher5"
+            android:name="io.legado.app.ui.welcome.Launcher5"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:launchMode="singleTask"
+                android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity
+            android:icon="@mipmap/launcher6"
+            android:name="io.legado.app.ui.welcome.Launcher6"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:launchMode="singleTask"
+                android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity
+            android:name="io.legado.app.ui.main.MainActivity"
+            android:launchMode="singleTask"
+            android:alwaysRetainTaskState="true"/>
+        <activity
+            android:name="io.legado.app.ui.welcome.SplashActivity"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="io.legado.app.ui.book.read.ReadBookActivity"
+            android:launchMode="singleTask"
+            android:configChanges="smallestScreenSize|screenSize|screenLayout|orientation|keyboardHidden|locale">
+            <intent-filter>
+                <action android:name="com.samsung.android.support.REMOTE_ACTION"/>
+            </intent-filter>
+            <meta-data
+                android:name="com.samsung.android.support.REMOTE_ACTION"
+                android:resource="@xml/spen_remote_actions"/>
+        </activity>
+        <activity
+            android:name="io.legado.app.ui.book.info.BookInfoActivity"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="io.legado.app.ui.book.info.BookEndActivity"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="io.legado.app.ui.book.info.edit.BookInfoEditActivity"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="io.legado.app.ui.audio.AudioPlayActivity"
+            android:launchMode="singleTask"/>
+        <activity
+            android:theme="@style/Activity.Permission"
+            android:name="io.legado.app.lib.permission.PermissionActivity"/>
+        <activity
+            android:name="io.legado.app.ui.qrcode.QrCodeActivity"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="io.legado.app.ui.rss.subscription.RuleSubActivity"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="io.legado.app.ui.book.source.edit.BookSourceEditActivity"
+            android:launchMode="singleTask"
+            android:configChanges="smallestScreenSize|screenSize|screenLayout|orientation|keyboardHidden|locale"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name="io.legado.app.ui.rss.source.edit.RssSourceEditActivity"
+            android:launchMode="singleTask"
+            android:configChanges="smallestScreenSize|screenSize|screenLayout|orientation|keyboardHidden|locale"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name="io.legado.app.ui.replace.edit.ReplaceEditActivity"
+            android:launchMode="singleTask"
+            android:configChanges="smallestScreenSize|screenSize|screenLayout|orientation|keyboardHidden|locale"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name="io.legado.app.ui.config.ConfigActivity"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="io.legado.app.ui.book.search.SearchActivity"
+            android:launchMode="standard"/>
+        <activity
+            android:name="io.legado.app.ui.about.AboutActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="behind"/>
+        <activity
+            android:name="io.legado.app.ui.about.DonateActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="behind"/>
+        <activity
+            android:name="io.legado.app.ui.book.source.manage.BookSourceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind"/>
+        <activity
+            android:name="io.legado.app.ui.rss.source.manage.RssSourceActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind"/>
+        <activity
+            android:name="io.legado.app.ui.about.FeedbackActivity"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name="io.legado.app.ui.replace.ReplaceRuleActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind"/>
+        <activity
+            android:name="io.legado.app.ui.book.arrange.ArrangeBookActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind"/>
+        <activity
+            android:name="io.legado.app.ui.book.source.debug.BookSourceDebugActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind"/>
+        <activity
+            android:name="io.legado.app.ui.book.toc.TocActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind"/>
+        <activity
+            android:name="io.legado.app.ui.book.searchContent.SearchContentActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="behind"/>
+        <activity
+            android:name="io.legado.app.ui.rss.article.RssSortActivity"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="io.legado.app.ui.rss.read.ReadRssActivity"
+            android:launchMode="singleTop"
+            android:configChanges="screenSize|orientation"
+            android:hardwareAccelerated="true"/>
+        <activity
+            android:name="io.legado.app.ui.book.local.ImportBookActivity"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="io.legado.app.ui.book.explore.ExploreShowActivity"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="io.legado.app.ui.rss.source.debug.RssSourceDebugActivity"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="io.legado.app.ui.rss.favorites.RssFavoritesActivity"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="io.legado.app.ui.book.cache.CacheActivity"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name="io.legado.app.ui.login.SourceLoginActivity"
+            android:configChanges="screenSize|orientation"
+            android:hardwareAccelerated="true"/>
+        <activity
+            android:name="io.legado.app.ui.about.ReadRecordActivity"
+            android:configChanges="screenSize|orientation"
+            android:hardwareAccelerated="true"/>
+        <activity
+            android:theme="@style/AppTheme.Transparent"
+            android:name="io.legado.app.ui.document.FilePickerActivity"
+            android:configChanges="screenSize|orientation"
+            android:hardwareAccelerated="true"/>
+        <activity
+            android:theme="@style/AppTheme.Transparent"
+            android:label="@string/receiving_shared_label"
+            android:name="io.legado.app.receiver.SharedReceiverActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/AppTheme.Transparent"
+            android:name="io.legado.app.ui.association.ImportBookSourceActivity"
+            android:configChanges="smallestScreenSize|screenSize|screenLayout|orientation|keyboardHidden|locale">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:scheme="yuedu"
+                    android:host="booksource"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/AppTheme.Transparent"
+            android:name="io.legado.app.ui.association.ImportRssSourceActivity"
+            android:configChanges="smallestScreenSize|screenSize|screenLayout|orientation|keyboardHidden|locale">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:scheme="yuedu"
+                    android:host="rsssource"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/AppTheme.Transparent"
+            android:name="io.legado.app.ui.association.ImportReplaceRuleActivity"
+            android:configChanges="smallestScreenSize|screenSize|screenLayout|orientation|keyboardHidden|locale">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:scheme="yuedu"
+                    android:host="replace"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/AppTheme.Transparent"
+            android:name="io.legado.app.ui.association.FileAssociationActivity"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="app"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="application/json"/>
+                <data android:mimeType="application/epub+zip"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:host="*"/>
+                <data android:scheme="app"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="*/*"/>
+                <data android:pathPattern=".*\\.txt"/>
+                <data android:pathPattern=".*\\.TXT"/>
+                <data android:pathPattern=".*\\.json"/>
+                <data android:pathPattern=".*\\.JSON"/>
+                <data android:pathPattern=".*\\.epub"/>
+                <data android:pathPattern=".*\\.EPUB"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:configChanges="screenSize|orientation|keyboardHidden|locale"/>
+        <service android:name="io.legado.app.service.CheckSourceService"/>
+        <service android:name="io.legado.app.service.CacheBookService"/>
+        <service android:name="io.legado.app.service.WebService"/>
+        <service android:name="io.legado.app.service.TTSReadAloudService"/>
+        <service android:name="io.legado.app.service.HttpReadAloudService"/>
+        <service android:name="io.legado.app.service.AudioPlayService"/>
+        <service android:name="io.legado.app.service.DownloadService"/>
+        <receiver android:name="io.legado.app.receiver.MediaButtonReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <provider
+            android:name="io.legado.app.api.ReaderProvider"
+            android:enabled="true"
+            android:exported="true"
+            android:authorities="io.wenyuange.app.release.readerProvider"/>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:authorities="io.wenyuange.app.release.fileProvider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+        <provider
+            android:name="io.legado.app.utils.BuglyFileProvider"
+            android:exported="false"
+            android:authorities="io.wenyuange.app.release.fileProvider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+        <meta-data
+            android:name="channel"
+            android:value="ads"/>
+        <provider
+            android:name="splitties.init.AppCtxInitProvider"
+            android:exported="false"
+            android:authorities="io.wenyuange.app.release.appctxinitprovider"
+            android:initOrder="900"
+            android:directBootAware="true"/>
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false"
+            android:directBootAware="true"/>
+        <activity android:name="com.tencent.bugly.beta.ui.BetaActiveAlertActivity"/>
+        <provider
+            android:name="com.tencent.bugly.beta.utils.BuglyFileProvider"
+            android:exported="false"
+            android:authorities="io.wenyuange.app.release.fileProvider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+        <service
+            android:name="com.tencent.bugly.beta.tinker.TinkerResultService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="false"/>
+        <provider
+            android:name="com.qq.e.comm.GDTFileProvider"
+            android:exported="false"
+            android:authorities="io.wenyuange.app.release.gdt.fileprovider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/gdt_file_path"/>
+        </provider>
+        <service
+            android:name="com.qq.e.comm.DownloadService"
+            android:exported="false"
+            android:multiprocess="true"/>
+        <activity
+            android:name="com.qq.e.ads.ADActivity"
+            android:multiprocess="true"
+            android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity
+            android:name="com.qq.e.ads.PortraitADActivity"
+            android:multiprocess="true"
+            android:screenOrientation="portrait"
+            android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity
+            android:name="com.qq.e.ads.LandscapeADActivity"
+            android:multiprocess="true"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="screenSize|orientation|keyboardHidden|keyboard"/>
+        <activity
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:name="com.qq.e.ads.RewardvideoPortraitADActivity"
+            android:multiprocess="true"
+            android:configChanges="screenSize|orientation|keyboardHidden|keyboard">
+            <meta-data
+                android:name="android.notch_support"
+                android:value="true"/>
+        </activity>
+        <activity
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:name="com.qq.e.ads.RewardvideoLandscapeADActivity"
+            android:multiprocess="true"
+            android:screenOrientation="landscape"
+            android:configChanges="screenSize|orientation|keyboardHidden|keyboard">
+            <meta-data
+                android:name="android.notch_support"
+                android:value="true"/>
+        </activity>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:name="com.qq.e.ads.DialogActivity"
+            android:multiprocess="true"/>
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
+            android:exported="false"
+            android:authorities="io.wenyuange.app.release.TTFileProvider"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/csj_file_paths"/>
+        </provider>
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+            android:exported="false"
+            android:authorities="io.wenyuange.app.release.TTMultiProvider"/>
+        <meta-data
+            android:name="ZEUS_PLUGIN_PANGLE"
+            android:value="{                 apiVersionCode:4011,                 packageName:com.byted.pangle,                 minPluginVersion:4011             }"/>
+        <activity
+            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Activity"
+            android:exported="false"
+            android:launchMode="standard"
+            android:configChanges="screenSize|orientation|navigation|keyboardHidden"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity"
+            android:exported="false"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:configChanges="screenSize|orientation|navigation|keyboardHidden"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Activity_T"
+            android:exported="false"
+            android:launchMode="standard"
+            android:configChanges="screenSize|orientation|navigation|keyboardHidden"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Landscape_Activity"
+            android:exported="false"
+            android:launchMode="standard"
+            android:screenOrientation="landscape"
+            android:configChanges="screenSize|orientation|navigation|keyboardHidden"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_Activity"
+            android:exported="false"
+            android:configChanges="screenSize|orientation|navigation|keyboardHidden"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent"
+            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_SingleTask_Activity_T"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:configChanges="screenSize|orientation|navigation|keyboardHidden"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity
+            android:name="com.bytedance.sdk.openadsdk.stub.activity.Stub_SingleTask_Activity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:configChanges="screenSize|orientation|navigation|keyboardHidden"
+            android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.stub.server.DownloaderServerManager"
+            android:exported="false"
+            android:process=":downloader"
+            android:authorities="io.wenyuange.app.release.pangle.servermanager.downloader.com.bytedance.sdk.openadsdk.adhost"/>
+        <provider
+            android:name="com.bytedance.pangle.servermanager.MainServerManager"
+            android:exported="false"
+            android:authorities="io.wenyuange.app.release.pangle.servermanager.main"/>
+        <provider
+            android:name="com.bytedance.pangle.provider.MainProcessProviderProxy"
+            android:exported="false"
+            android:authorities="io.wenyuange.app.release.pangle.provider.proxy.main"/>
+        <activity android:name="com.ss.android.downloadlib.addownload.compliance.AppPrivacyPolicyActivity"/>
+        <activity android:name="com.ss.android.downloadlib.addownload.compliance.AppDetailInfoActivity"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.ss.android.downloadlib.activity.TTDelegateActivity"
+            android:launchMode="singleTask"/>
+        <activity
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:name="com.ss.android.downloadlib.activity.JumpKllkActivity"
+            android:launchMode="singleTask"/>
+        <receiver android:name="com.ss.android.downloadlib.core.download.DownloadReceiver"/>
+        <service android:name="com.ss.android.socialbase.appdownloader.DownloadHandlerService"/>
+        <activity
+            android:theme="@android:style/Theme.Dialog"
+            android:name="com.ss.android.socialbase.appdownloader.view.DownloadTaskDeleteActivity"
+            android:launchMode="singleTask"/>
+        <activity
+            android:theme="@android:style/Theme.Dialog"
+            android:name="com.ss.android.socialbase.appdownloader.view.JumpUnknownSourceActivity"
+            android:launchMode="singleTask"/>
+        <service
+            android:name="com.ss.android.socialbase.appdownloader.RetryJobSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:enabled="true"
+            android:exported="false"/>
+        <service
+            android:name="com.ss.android.socialbase.downloader.downloader.IndependentProcessDownloadService"
+            android:exported="false"
+            android:process=":downloader">
+            <intent-filter>
+                <action android:name="com.ss.android.socialbase.downloader.remote"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.ss.android.socialbase.downloader.notification.DownloadNotificationService"/>
+        <service android:name="com.ss.android.socialbase.downloader.downloader.DownloadService"/>
+        <service android:name="com.ss.android.socialbase.downloader.impls.DownloadHandleService"/>
+        <service android:name="com.ss.android.socialbase.downloader.downloader.SqlDownloadCacheService"/>
+        <provider
+            android:name="androidx.view.ProcessLifecycleOwnerInitializer"
+            android:exported="false"
+            android:multiprocess="true"
+            android:authorities="io.wenyuange.app.release.lifecycle-process"/>
+    </application>
+</manifest>

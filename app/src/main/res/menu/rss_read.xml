@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_star_border"
+        android:id="@+id/menu_rss_star"
+        android:title="@string/favorite"
+        app:showAsAction="always"/>
+    <item
+        android:icon="@drawable/ic_share"
+        android:id="@+id/menu_share_it"
+        android:title="@string/share"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:icon="@drawable/ic_volume_up"
+        android:id="@+id/menu_aloud"
+        android:title="@string/read_aloud"
+        app:showAsAction="ifRoom"/>
+</menu>

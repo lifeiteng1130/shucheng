@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_star"
+        android:id="@+id/menu_rss_star"
+        android:title="@string/favorite"
+        app:showAsAction="always"/>
+    <item
+        android:icon="@drawable/ic_groups"
+        android:id="@+id/menu_group"
+        android:title="@string/group"
+        app:showAsAction="always">
+        <menu/>
+    </item>
+    <item
+        android:icon="@drawable/ic_settings"
+        android:id="@+id/menu_rss_config"
+        android:title="@string/setting"
+        app:showAsAction="always"/>
+</menu>

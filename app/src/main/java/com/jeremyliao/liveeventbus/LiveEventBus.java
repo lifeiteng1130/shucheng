@@ -1,20 +1,43 @@
 package com.jeremyliao.liveeventbus;
 
-import com.jeremyliao.liveeventbus.core.Config;
-import com.jeremyliao.liveeventbus.core.LiveEventBusCore;
-import com.jeremyliao.liveeventbus.core.Observable;
+import android.app.Application;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Observer;
 
-/* JADX INFO: loaded from: classes.dex */
-public final class LiveEventBus {
-    public static Config config() {
-        return LiveEventBusCore.get().config();
+/**
+ * Stub implementation of LiveEventBus.
+ * Provides no-op implementations so the app compiles without the real library.
+ */
+public class LiveEventBus {
+
+    public static LiveEventConfig config() {
+        return new LiveEventConfig();
     }
 
-    public static <T> Observable<T> get(String str, Class<T> cls) {
-        return LiveEventBusCore.get().with(str, cls);
+    public static <T> LiveEventBusData<T> get(String key) {
+        return new LiveEventBusData<>();
     }
 
-    public static Observable<Object> get(String str) {
-        return get(str, Object.class);
+    public static class LiveEventConfig {
+        public LiveEventConfig supportBroadcast(Application app) { return this; }
+        public LiveEventConfig lifecycleObserverAlwaysActive(boolean active) { return this; }
+        public LiveEventConfig autoClear(boolean clear) { return this; }
+    }
+
+    public static class LiveEventBusData<T> {
+        private final MutableLiveData<T> liveData = new MutableLiveData<>();
+
+        public void post(T value) {
+            // no-op in stub
+        }
+
+        public void observe(LifecycleOwner owner, Observer<T> observer) {
+            // no-op in stub
+        }
+
+        public void observeSticky(LifecycleOwner owner, Observer<T> observer) {
+            // no-op in stub
+        }
     }
 }
