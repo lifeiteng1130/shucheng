@@ -30,7 +30,6 @@
     </attr>
     <attr name="isBottomBackground" format="boolean"/>
     <attr name="loading_width" format="dimension"/>
-    <attr name="max" format="integer"/>
     <attr name="radius" format="dimension"/>
     <attr name="seekBarRotation" format="enum">
         <enum name="normal" value="0"/>
