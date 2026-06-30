@@ -1,6 +1,0 @@
-package com.qq.e.comm.pi;
-
-/* JADX INFO: loaded from: classes.dex */
-public interface CAI extends ADI {
-    void loadAd(int i2, int i3, boolean z);
-}
