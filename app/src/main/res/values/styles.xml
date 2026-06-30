@@ -54,4 +54,10 @@
     <style name="TestStyleWithLineHeight"/>
     <style name="TestStyleWithLineHeightAppearance"/>
     <style name="TestStyleWithThemeLineHeightAttribute"/>
+
+    <!-- Pangle/CSJ SDK stubs -->
+    <style name="tt_appdownloader_style_notification_title" parent="android:Widget.TextView"/>
+    <style name="tt_appdownloader_style_notification_text" parent="android:Widget.TextView"/>
+    <style name="tt_appdownloader_style_progress_bar" parent="android:Widget.ProgressBar"/>
+    <style name="tt_appdownloader_style_progress_bar_new" parent="android:Widget.ProgressBar"/>
 </resources>

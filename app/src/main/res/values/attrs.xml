@@ -18,16 +18,24 @@
     <!-- Custom views -->
     <attr name="contentLayout" format="reference"/>
     <attr name="cornerRadius" format="dimension"/>
+    <attr name="displayHomeAsUp" format="boolean"/>
     <attr name="fitStatusBar" format="boolean"/>
-    <attr name="hide_mode" format="integer"/>
+    <attr name="hide_mode" format="enum">
+        <enum name="invisible" value="0"/>
+        <enum name="gone" value="1"/>
+    </attr>
     <attr name="isBottomBackground" format="boolean"/>
     <attr name="loading_width" format="dimension"/>
     <attr name="max" format="integer"/>
     <attr name="radius" format="dimension"/>
     <attr name="seekBarRotation" format="enum">
         <enum name="normal" value="0"/>
-        <enum name="reverse" value="1"/>
+        <enum name="CW90" value="1"/>
+        <enum name="CW180" value="2"/>
+        <enum name="CW270" value="3"/>
+        <enum name="reverse" value="4"/>
     </attr>
+    <attr name="text" format="string|reference"/>
     <attr name="themeMode" format="enum">
         <enum name="auto" value="0"/>
         <enum name="light" value="1"/>
