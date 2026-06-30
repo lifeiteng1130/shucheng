@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ArcView -->
+    <attr name="arcDirectionTop" format="boolean"/>
+    <attr name="arcHeight" format="dimension"/>
+    <attr name="bgColor" format="color|reference"/>
+
+    <!-- CircleImageView -->
+    <attr name="civ_border_width" format="dimension"/>
+    <attr name="civ_border_color" format="color|reference"/>
+
+    <!-- ColorPickerView -->
+    <attr name="cpv_colorShape" format="enum">
+        <enum name="circle" value="0"/>
+        <enum name="square" value="1"/>
+    </attr>
+
+    <!-- Custom views -->
+    <attr name="contentLayout" format="reference"/>
+    <attr name="cornerRadius" format="dimension"/>
+    <attr name="fitStatusBar" format="boolean"/>
+    <attr name="hide_mode" format="integer"/>
+    <attr name="isBottomBackground" format="boolean"/>
+    <attr name="loading_width" format="dimension"/>
+    <attr name="max" format="integer"/>
+    <attr name="radius" format="dimension"/>
+    <attr name="seekBarRotation" format="enum">
+        <enum name="normal" value="0"/>
+        <enum name="reverse" value="1"/>
+    </attr>
+    <attr name="themeMode" format="enum">
+        <enum name="auto" value="0"/>
+        <enum name="light" value="1"/>
+        <enum name="dark" value="2"/>
+    </attr>
+    <attr name="attachToActivity" format="boolean"/>
+</resources>
