@@ -14,6 +14,10 @@
         <enum name="circle" value="0"/>
         <enum name="square" value="1"/>
     </attr>
+    <attr name="cpv_dialogType" format="enum">
+        <enum name="Preset" value="0"/>
+        <enum name="Custom" value="1"/>
+    </attr>
 
     <!-- Custom views -->
     <attr name="contentLayout" format="reference"/>
@@ -42,4 +46,108 @@
         <enum name="dark" value="2"/>
     </attr>
     <attr name="attachToActivity" format="boolean"/>
+
+    <!-- Preference -->
+    <attr name="allowDividerAbove" format="boolean"/>
+    <attr name="allowDividerBelow" format="boolean"/>
+    <attr name="iconSpaceReserved" format="boolean"/>
+
+    <!-- Badge -->
+    <attr name="badgeGravity" format="enum">
+        <enum name="top_start" value="0x800033"/>
+        <enum name="top_end" value="8388661"/>
+        <enum name="bottom_start" value="8388691"/>
+        <enum name="bottom_end" value="8388693"/>
+    </attr>
+    <attr name="horizontalOffset" format="dimension"/>
+    <attr name="maxCharacterCount" format="integer"/>
+    <attr name="verticalOffset" format="dimension"/>
+
+    <!-- Material / AndroidX library attrs referenced via app: namespace -->
+    <attr name="actionViewClass" format="string"/>
+    <attr name="alpha" format="float"/>
+    <attr name="backgroundTint" format="color|reference"/>
+    <attr name="barrierMargin" format="dimension"/>
+    <attr name="buttonTint" format="color|reference"/>
+    <attr name="cardCornerRadius" format="dimension"/>
+    <attr name="cardElevation" format="dimension"/>
+    <attr name="checkedButton" format="reference"/>
+    <attr name="chipCornerRadius" format="dimension"/>
+    <attr name="contentInsetRight" format="dimension"/>
+    <attr name="contentInsetStartWithNavigation" format="dimension"/>
+    <attr name="defaultQueryHint" format="string"/>
+    <attr name="dividerDrawable" format="reference"/>
+    <attr name="elevation" format="dimension"/>
+    <attr name="entries" format="reference"/>
+    <attr name="entryValues" format="reference"/>
+    <attr name="errorIconDrawable" format="reference"/>
+    <attr name="fabSize" format="enum">
+        <enum name="auto" value="-1"/>
+        <enum name="mini" value="1"/>
+        <enum name="normal" value="0"/>
+    </attr>
+    <attr name="flexDirection" format="enum">
+        <enum name="row" value="0"/>
+        <enum name="row_reverse" value="1"/>
+        <enum name="column" value="2"/>
+        <enum name="column_reverse" value="3"/>
+    </attr>
+    <attr name="flexWrap" format="enum">
+        <enum name="nowrap" value="0"/>
+        <enum name="wrap" value="1"/>
+        <enum name="wrap_reverse" value="2"/>
+    </attr>
+    <attr name="hintEnabled" format="boolean"/>
+    <attr name="labelVisibilityMode" format="enum">
+        <enum name="auto" value="-1"/>
+        <enum name="labeled" value="0"/>
+        <enum name="unlabeled" value="1"/>
+        <enum name="selected" value="2"/>
+    </attr>
+    <attr name="layout" format="reference"/>
+    <attr name="layoutManager" format="string"/>
+    <attr name="lineHeight" format="dimension"/>
+    <attr name="maxHeight" format="dimension"/>
+    <attr name="maxWidth" format="dimension"/>
+    <attr name="pressedTranslationZ" format="dimension"/>
+    <attr name="queryBackground" format="reference"/>
+    <attr name="searchHintIcon" format="reference"/>
+    <attr name="selectionRequired" format="boolean"/>
+    <attr name="selectorSize" format="dimension"/>
+    <attr name="shapeAppearance" format="reference"/>
+    <attr name="shapeAppearanceOverlay" format="reference"/>
+    <attr name="showAsAction" format="enum">
+        <enum name="never" value="0"/>
+        <enum name="ifRoom" value="1"/>
+        <enum name="always" value="2"/>
+        <enum name="withText" value="4"/>
+        <enum name="collapseActionView" value="8"/>
+    </attr>
+    <attr name="showDivider" format="enum">
+        <enum name="none" value="0"/>
+        <enum name="beginning" value="1"/>
+        <enum name="middle" value="2"/>
+        <enum name="end" value="4"/>
+    </attr>
+    <attr name="singleSelection" format="boolean"/>
+    <attr name="spanCount" format="integer"/>
+    <attr name="state_dragged" format="boolean"/>
+    <attr name="state_liftable" format="boolean"/>
+    <attr name="state_lifted" format="boolean"/>
+    <attr name="submitBackground" format="reference"/>
+    <attr name="tabBackground" format="reference"/>
+    <attr name="tabMaxWidth" format="dimension"/>
+    <attr name="tabMinWidth" format="dimension"/>
+    <attr name="tabMode" format="enum">
+        <enum name="fixed" value="0"/>
+        <enum name="scrollable" value="1"/>
+    </attr>
+    <attr name="tabRippleColor" format="color|reference"/>
+    <attr name="tint" format="color|reference"/>
+    <attr name="titleTextAppearance" format="reference"/>
+    <attr name="menu" format="reference"/>
+    <attr name="popupTheme" format="reference"/>
+    <attr name="subtitle" format="reference"/>
+    <attr name="theme" format="reference"/>
+    <attr name="title" format="reference"/>
 </resources>
