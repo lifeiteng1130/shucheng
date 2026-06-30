@@ -62,4 +62,21 @@
     <style name="tt_appdownloader_style_notification_text" parent="android:Widget.TextView"/>
     <style name="tt_appdownloader_style_progress_bar" parent="android:Widget.ProgressBar"/>
     <style name="tt_appdownloader_style_progress_bar_new" parent="android:Widget.ProgressBar"/>
+    <style name="TextAppearance.Compat.Notification.Info" parent="android:TextAppearance.DeviceDefault.Small"/>
+    <style name="TextAppearance.Compat.Notification.Info.Media" parent="TextAppearance.Compat.Notification.Info"/>
+    <style name="TextAppearance.Compat.Notification.Line2.Media" parent="android:TextAppearance.DeviceDefault.Small"/>
+    <style name="TextAppearance.Compat.Notification.Media" parent="android:TextAppearance.DeviceDefault.Small"/>
+    <style name="TextAppearance.Compat.Notification.Time" parent="android:TextAppearance.DeviceDefault.Small"/>
+    <style name="TextAppearance.Compat.Notification.Time.Media" parent="TextAppearance.Compat.Notification.Time"/>
+    <style name="TextAppearance.Compat.Notification.Title.Media" parent="android:TextAppearance.DeviceDefault.Small"/>
+    <style name="ThemeOverlay.AppCompat.Dark" parent="ThemeOverlay.MaterialComponents.Dark"/>
+    <style name="Widget.AppCompat.ProgressBar" parent="android:Widget.ProgressBar"/>
+    <style name="Widget.Compat.NotificationActionContainer" parent="android:Widget.LinearLayout"/>
+    <style name="Widget.Compat.NotificationActionText" parent="android:Widget.TextView"/>
+    <style name="Widget.Design.Snackbar" parent="Widget.MaterialComponents.Snackbar"/>
+    <style name="Widget.MaterialComponents.Chip.Action" parent="Widget.MaterialComponents.Chip.Entry"/>
+    <style name="Widget.MaterialComponents.Chip.Filter" parent="Widget.MaterialComponents.Chip.Entry"/>
+    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"/>
+    <style name="Widget.MaterialComponents.TimePicker.Display.TextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox"/>
+    <style name="Widget.MaterialComponents.Toolbar.Surface" parent="Widget.MaterialComponents.Toolbar.Primary"/>
 </resources>
