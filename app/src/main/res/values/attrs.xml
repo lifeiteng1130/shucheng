@@ -15,8 +15,8 @@
         <enum name="square" value="1"/>
     </attr>
     <attr name="cpv_dialogType" format="enum">
-        <enum name="Preset" value="0"/>
-        <enum name="Custom" value="1"/>
+        <enum name="preset" value="0"/>
+        <enum name="custom" value="1"/>
     </attr>
 
     <!-- 应用自定义属性 -->
@@ -30,6 +30,7 @@
     </attr>
     <attr name="isBottomBackground" format="boolean"/>
     <attr name="loading_width" format="dimension"/>
+    <attr name="max" format="integer"/>
     <attr name="radius" format="dimension"/>
     <attr name="seekBarRotation" format="enum">
         <enum name="normal" value="0"/>
@@ -45,4 +46,6 @@
         <enum name="dark" value="2"/>
     </attr>
     <attr name="attachToActivity" format="boolean"/>
+    <attr name="barrierMargin" format="dimension"/>
+    <attr name="titleTextAppearance" format="reference"/>
 </resources>
