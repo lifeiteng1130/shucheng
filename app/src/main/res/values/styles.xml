@@ -71,7 +71,7 @@
     <style name="TextAppearance.Compat.Notification.Title.Media" parent="android:TextAppearance.DeviceDefault.Small"/>
     <style name="ThemeOverlay.AppCompat.Dark" parent="ThemeOverlay.MaterialComponents.Dark"/>
     <style name="Widget.AppCompat.ProgressBar" parent="android:Widget.ProgressBar"/>
-    <style name="Widget.Compat.NotificationActionContainer"/>
+    <style name="Widget.Compat.NotificationActionContainer" parent="android:style/Widget"/>
     <style name="Widget.Compat.NotificationActionText" parent="android:Widget.TextView"/>
     <style name="Widget.Design.Snackbar" parent="Widget.MaterialComponents.Snackbar"/>
     <style name="Widget.MaterialComponents.Chip.Action" parent="Widget.MaterialComponents.Chip.Entry"/>
