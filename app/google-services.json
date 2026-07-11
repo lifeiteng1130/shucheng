@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "849172389284",
+    "project_id": "shucheng-dfdf8",
+    "storage_bucket": "shucheng-dfdf8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849172389284:android:38535db137afb871dd3531",
+        "android_client_info": {
+          "package_name": "io.legato.kazusa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4wTl6ELVQbllq0QvpH1hrcabq_y87bq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
